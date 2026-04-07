@@ -1,0 +1,24 @@
+const profile = {
+  name: 'Dhruv Kumar Boothu',
+  title: 'Business Analyst · Data Analytics · Decision Intelligence',
+  location: 'Berlin, Germany',
+  intro:
+    'BA and decision analytics professional with 3+ years embedding with enterprise clients (NTT Global) on Oracle Fusion — translating messy operational data into Power BI dashboards, automation scripts, and planning tools that finance and procurement teams actually use. M.Sc. in Data Science. Based in Berlin, German B1 → B2.',
+  valueStatement:
+    'Turning complex business problems into structured, data-backed decisions that stakeholders can act on.',
+  videoUrl: '',
+  videoDescription:
+    'A 60-second overview of my background, the type of problems I solve, and what I\'m looking for in Berlin.',
+  links: {
+    email: 'dhruvvkumar98@gmail.com',
+    linkedin: 'https://www.linkedin.com/in/dhruv-kumar-a54a2916b/',
+    github: 'https://github.com/11Fawkes',
+  },
+  resumeUrl: '/resume.pdf',
+  workAuth: 'Based in Berlin. Authorized to work in Germany (job-seeker visa). German B1, advancing to B2.',
+  tagline: 'Business Analyst · Data Analytics · Decision Intelligence',
+  photo: '/portfolio/Profile.JPG',
+resumeImages: ['/portfolio/resume_page-1.jpg', '/portfolio/resume_page-2.jpg'],
+};
+
+export default profile;

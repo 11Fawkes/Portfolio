@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Custom styles for the portfolio dashboard can be added here.  Tailwind
+  directives above bring in the default styles and utilities.  Keep
+  additional classes minimal to retain the clean, analyst workspace feel.
+*/
