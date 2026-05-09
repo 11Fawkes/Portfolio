@@ -146,6 +146,36 @@ const projects = [
       { name: 'Statistical Analysis', value: 25 },
     ],
   },
+  {
+    title: 'Return Radar',
+    category: 'Business Analysis',
+    problem: 'Zalando cut its return window from 100 to 30 days in January 2025, creating an operational blind spot for small fashion brands selling on the platform — they had no independent tool to model the impact on their return risk or inventory.',
+    decision: 'Build a free, publicly accessible business intelligence tool that helps Zalando partner brands understand their return risk exposure, simulate inventory backlog, and get prioritised actions — written entirely in plain English for non-technical brand operators.',
+    tags: ['Python', 'Streamlit', 'Pandas', 'Plotly', 'Business Analysis', 'E-Commerce'],
+    outcome: 'Deployed a live tool at return-radar-xzpldtsqyytl3rfiwsrlne.streamlit.app — input 5 numbers, get a return risk score, 90-day inventory simulation across 3 scenarios, and 3 prioritised business recommendations.',
+    context: 'Independent business analysis portfolio project. Built in Berlin, May 2026, in response to a real policy change affecting thousands of SME fashion brands across Germany, Netherlands, and Italy.',
+    business_question: 'How can small fashion brands selling on Zalando understand and manage their return rate exposure before Zalando penalises their account visibility?',
+    data: 'Static reference benchmarks from McKinsey, Bitkom, NRF, and Zalando corporate reports. Category return rate benchmarks, penalty threshold estimates, and financial constants (holding cost rate, resale velocity, secondary market discount).',
+    approach: 'Composite risk score model with 4 weighted sub-scores (benchmark comparison 40%, threshold proximity 35%, price factor 15%, volume factor 10%). 90-day daily inventory simulation across 3 scenarios. 12-action recommendation library with conditional triggers based on user inputs.',
+    insights: [
+      'Zalando has solved return intelligence for itself — ML models, fit AI, computer vision. Their seller partners have a spreadsheet. That asymmetry is the entire reason this tool exists.',
+      'The 30-day window compresses the same volume of returns into a single month — sellers who looked fine under 100 days now appear to exceed penalty thresholds.',
+      'Framing every output as a business question (not a data output) is what makes a tool useful to a non-technical operator.',
+    ],
+    recommendation: 'For any platform-dependent SME, return rate management is not optional — it directly affects algorithmic visibility, cash flow, and account standing. Independent benchmarking tools fill a critical gap.',
+    validation: 'Benchmarks cross-referenced across 15+ published academic and industry sources. Tool tested across all 7 product categories and edge cases (0% and 70% return rates).',
+    githubUrl: 'https://github.com/11Fawkes/return-radar',
+    artifacts: [
+      { label: 'Live Tool', link: 'https://return-radar-xzpldtsqyytl3rfiwsrlne.streamlit.app/' },
+      { label: 'GitHub', link: 'https://github.com/11Fawkes/return-radar' },
+    ],
+    skillsUsage: [
+      { name: 'Business Analysis', value: 35 },
+      { name: 'Python / Streamlit', value: 30 },
+      { name: 'Data Modelling', value: 20 },
+      { name: 'UX / Product Thinking', value: 15 },
+    ],
+  },
 ];
 
 export default projects;
