@@ -1,3 +1,5 @@
+const base = import.meta.env.BASE_URL;
+
 const profile = {
   name: 'Dhruv Kumar Boothu',
   title: 'Business Analyst · Data Analytics · Decision Intelligence',
@@ -14,11 +16,11 @@ const profile = {
     linkedin: 'https://www.linkedin.com/in/dhruv-kumar-a54a2916b/',
     github: 'https://github.com/11Fawkes',
   },
-  resumeUrl: '/resume.pdf',
+  resumeUrl: `${base}resume.pdf`,
   workAuth: 'Based in Berlin. Authorized to work in Germany (job-seeker visa). German B1, advancing to B2.',
   tagline: 'Business Analyst · Data Analytics · Decision Intelligence',
-  photo: '/portfolio/Profile.JPG',
-resumeImages: ['/portfolio/resume_page-1.jpg', '/portfolio/resume_page-2.jpg'],
+  photo: `${base}Profile.JPG`,
+  resumeImages: [`${base}resume_page-1.jpg`, `${base}resume_page-2.jpg`],
 };
 
 export default profile;

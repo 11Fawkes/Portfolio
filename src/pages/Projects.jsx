@@ -10,6 +10,8 @@ const categoryColors = {
   'Analytics': 'bg-emerald-100 text-emerald-700',
   'ML & Product': 'bg-purple-100 text-purple-700',
   'Data Engineering': 'bg-orange-100 text-orange-700',
+  'Business Analysis': 'bg-amber-100 text-amber-700',
+  'Growth Analytics': 'bg-teal-100 text-teal-700',
 };
 
 export default function Projects() {
