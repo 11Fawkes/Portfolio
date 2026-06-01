@@ -1,0 +1,85 @@
+/*
+╔══════════════════════════════════════════════════════════════╗
+║  DESIGN TOKENS — src/design/tokens.css                      ║
+║                                                              ║
+║  THIS IS THE ONLY FILE TO CHANGE FOR VISUAL UPDATES:        ║
+║  → Colours       → Fonts       → Spacing                    ║
+║  → Border radius → Transitions → Special effects            ║
+║                                                              ║
+║  Change a value here → changes everywhere instantly.         ║
+╚══════════════════════════════════════════════════════════════╝
+*/
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@300;400&display=swap');
+:root {
+  /* ── COLOURS ──────────────────────────────────────────────
+     To repaint the whole site: edit only these 10 lines.
+     Current palette: warm paper + near-black + gold accent.
+     ──────────────────────────────────────────────────────── */
+  --c-ink:      #0a0a0a;   /* body text, primary headers */
+  --c-ink-2:    #141414;   /* dark section backgrounds   */
+  --c-ink-3:    #1e1e1e;   /* dark card backgrounds      */
+  --c-paper:    #f5f2ed;   /* main page background       */
+  --c-paper-2:  #ede9e2;   /* hover background           */
+  --c-paper-3:  #e0dbd2;   /* borders, dividers          */
+  --c-gold:     #c9a84c;   /* accent: links, tags, lines */
+  --c-gold-2:   #e8c96a;   /* accent hover state         */
+  --c-muted:    #6b6b6b;   /* secondary text             */
+  --c-faint:    #9a9a9a;   /* tertiary text              */
+  /* ── FONTS ────────────────────────────────────────────────
+     To swap fonts:
+     1. Change the family name below
+     2. Update the @import URL above with the new Google Font
+     ──────────────────────────────────────────────────────── */
+  --f-display: 'Syne', sans-serif;      /* hero name, page titles, card titles */
+  --f-body:    'DM Sans', sans-serif;   /* paragraphs, descriptions            */
+  --f-mono:    'DM Mono', monospace;    /* labels, tags, nav, captions         */
+  /* ── TYPE SCALE ───────────────────────────────────────────*/
+  --fs-hero: clamp(3.5rem, 9vw, 6.5rem);
+  --fs-h1:   clamp(2rem, 4vw, 2.75rem);
+  --fs-h2:   1.35rem;
+  --fs-body: 0.95rem;
+  --fs-sm:   0.83rem;
+  --fs-xs:   0.68rem;
+  --fs-tag:  0.62rem;
+  /* ── SPACING SCALE ────────────────────────────────────────*/
+  --sp-2:   0.5rem;
+  --sp-4:   1rem;
+  --sp-6:   1.5rem;
+  --sp-8:   2rem;
+  --sp-10:  2.5rem;
+  --sp-12:  3rem;
+  --sp-16:  4rem;
+  --sp-20:  5rem;
+  --sp-24:  6rem;
+  /* ── LAYOUT ───────────────────────────────────────────────*/
+  --max-w:     1100px;
+  --pad-x:     2.5rem;
+  --pad-y:     var(--sp-24);
+  /* ── BORDERS ──────────────────────────────────────────────*/
+  --b-light:  1px solid var(--c-paper-3);
+  --b-dark:   1px solid var(--c-ink-3);
+  --b-gold:   1px solid var(--c-gold);
+  --radius:   0px;    /* 0 = sharp/punk. Change to 6px for soft rounded. */
+  /* ── TRANSITIONS ──────────────────────────────────────────*/
+  --ease:  cubic-bezier(0.16, 1, 0.3, 1);
+  --t-fast: 0.15s var(--ease);
+  --t-base: 0.25s var(--ease);
+  /* ── PUNK STAMP EFFECT ────────────────────────────────────
+     The gold shadow offset on the hero name.
+     Set both to 0px to disable completely.
+     ──────────────────────────────────────────────────────── */
+  --stamp-x: 4px;
+  --stamp-y: 5px;
+  /* ── GRAIN TEXTURE ────────────────────────────────────────
+     Subtle noise overlay on the whole page.
+     Set to 0 to remove it entirely.
+     ──────────────────────────────────────────────────────── */
+  --noise: 0.35;
+}
+/* Mobile overrides */
+@media (max-width: 640px) {
+  :root {
+    --pad-x: 1.25rem;
+    --pad-y: var(--sp-16);
+  }
+}

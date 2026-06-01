@@ -1,6 +1,73 @@
 /**
- * Project case studies — only original repos from github.com/11Fawkes
- * Forked/saved repos are excluded.
+ * ============================================================
+ * PROJECTS — src/data/projects.js
+ * ============================================================
+ *
+ * HOW TO ADD A NEW PROJECT
+ * ─────────────────────────
+ * Copy the template below and paste it as a new object
+ * at the TOP of the projects array (most recent first).
+ * Then run: git add . && git commit -m "add: [project name]" && git push
+ *
+ * FIELD REFERENCE
+ * ─────────────────────────
+ * REQUIRED fields — the card and case study won't work without these:
+ *   title           string   — project name shown on card
+ *   category        string   — used for filter tabs e.g. 'Business Analysis'
+ *   tags            array    — tech/skill pills e.g. ['Python', 'Streamlit']
+ *   outcome         string   — 1-2 sentences. Shown on card (truncated) and in case study
+ *   githubUrl       string   — GitHub repo link. Use '#' if private/not yet public
+ *   artifacts       array    — links shown at bottom of case study panel
+ *                              e.g. [{ label: 'Live Tool', link: 'https://...' }, { label: 'GitHub', link: '...' }]
+ *   skillsUsage     array    — skill breakdown bars shown on card
+ *                              e.g. [{ name: 'Python', value: 40 }, { name: 'Business Analysis', value: 60 }]
+ *                              values should add to 100
+ *
+ * OPTIONAL fields — case study panel only, skip if not applicable:
+ *   problem         string   — the business problem being solved
+ *   decision        string   — the strategic decision made
+ *   context         string   — background/setting
+ *   business_question string — the core question being answered
+ *   data            string   — data sources used
+ *   approach        string   — methodology
+ *   insights        array    — key findings as string array
+ *   recommendation  string   — what you'd recommend based on findings
+ *   validation      string   — how you validated the work
+ *   liveUrl         string   — live demo URL if separate from githubUrl
+ *
+ * ─────────────────────────
+ * TEMPLATE — copy from here:
+ * ─────────────────────────
+ * {
+ *   title: 'Your Project Title',
+ *   category: 'Business Analysis',      // pick from existing or add new
+ *   tags: ['Python', 'Streamlit'],
+ *   outcome: 'One or two sentences describing what was built and what it does.',
+ *   githubUrl: 'https://github.com/11Fawkes/your-repo',
+ *   artifacts: [
+ *     { label: 'Live Tool', link: 'https://your-live-url.streamlit.app' },
+ *     { label: 'GitHub',    link: 'https://github.com/11Fawkes/your-repo' },
+ *   ],
+ *   skillsUsage: [
+ *     { name: 'Business Analysis', value: 40 },
+ *     { name: 'Python / Streamlit', value: 35 },
+ *     { name: 'Data Modelling', value: 25 },
+ *   ],
+ *   // Optional case study fields below — delete any you don't need
+ *   problem: 'What problem does this solve?',
+ *   decision: 'What was the strategic decision?',
+ *   context: 'Background and setting.',
+ *   business_question: 'The core question being answered.',
+ *   data: 'Data sources used.',
+ *   approach: 'How you approached the problem.',
+ *   insights: [
+ *     'First key finding.',
+ *     'Second key finding.',
+ *   ],
+ *   recommendation: 'What you would recommend.',
+ *   validation: 'How you validated the work.',
+ * },
+ * ============================================================
  */
 const projects = [
   {

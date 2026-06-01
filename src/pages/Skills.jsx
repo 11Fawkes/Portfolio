@@ -1,37 +1,29 @@
 import skills from '../data/skills.js';
 import languages from '../data/languages.js';
-import Tag from '../components/Tag.jsx';
-import SkillsChart from '../components/SkillsChart.jsx';
-
+import SkillGroup from '../components/SkillGroup.jsx';
 export default function Skills() {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 space-y-8">
-      <section>
-        <h3 className="text-xl font-semibold text-gray-900 mb-4">Skills Overview</h3>
-        <SkillsChart groups={skills} />
-      </section>
-      {skills.map((group) => (
-        <section key={group.group}>
-          <h3 className="text-xl font-semibold text-gray-900 mb-2">{group.group}</h3>
-          <p className="text-sm text-gray-600 mb-2">{group.description}</p>
-          <div className="flex flex-wrap">
-            {group.items.map((item) => (
-              <Tag key={item}>{item}</Tag>
-            ))}
-          </div>
-        </section>
-      ))}
-      <section>
-        <h3 className="text-xl font-semibold text-gray-900 mb-2">Languages</h3>
-        <div className="flex flex-wrap">
-          {languages.map((lang) => (
-            <div key={lang.name} className="mr-4 mb-2 flex items-center">
-              <span className="text-sm font-medium text-gray-700 mr-1">{lang.name}:</span>
-              <span className="text-sm text-gray-500">{lang.level}</span>
+    <div className="page" style={{ paddingTop: '6rem', paddingBottom: '6rem' }}>
+      <div className="sec-header">
+        <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem' }}>
+          <span className="sec-num">04</span>
+          <h1 className="sec-title">Skills</h1>
+        </div>
+      </div>
+      <div className="g-grid reveal" style={{ gridTemplateColumns: 'repeat(2,1fr)', marginBottom: '4rem' }}>
+        {skills.map(g => <SkillGroup key={g.group} group={g} />)}
+      </div>
+      <div style={{ borderTop: 'var(--b-light)', paddingTop: '3rem' }} className="reveal d1">
+        <div className="label" style={{ marginBottom: '1.5rem' }}>Languages</div>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '3rem' }}>
+          {languages.map(l => (
+            <div key={l.name}>
+              <div className="font-display font-semibold text-ink" style={{ fontSize: 'var(--fs-h2)' }}>{l.name}</div>
+              <div className="font-mono text-muted" style={{ fontSize: 'var(--fs-xs)', marginTop: '0.3rem' }}>{l.level}</div>
             </div>
           ))}
         </div>
-      </section>
+      </div>
     </div>
   );
 }

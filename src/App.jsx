@@ -1,41 +1,30 @@
-import { useState } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import Nav from './components/Nav.jsx';
 import routes from './routes.jsx';
-import Topbar from './components/Topbar.jsx';
-import Sidebar from './components/Sidebar.jsx';
-
-/**
- * Main application layout.  It contains the top bar with search and page title,
- * the navigation menu and renders the active route below.  The search state
- * lives at this level so it can be passed down to pages such as Projects for
- * client‑side filtering.
- */
 export default function App() {
-  const [search, setSearch] = useState('');
-  const location = useLocation();
-
-  // Determine the current route for page title display.
-  const currentRoute = routes.find((r) => r.path === location.pathname);
-  const pageTitle = currentRoute?.title || '';
-
+  // Global scroll reveal — works automatically on every page
+  useEffect(() => {
+    const obs = new IntersectionObserver(
+      entries => entries.forEach(e => e.isIntersecting && e.target.classList.add('visible')),
+      { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+    );
+    const attach = () => document.querySelectorAll('.reveal:not(.visible)').forEach(el => obs.observe(el));
+    attach();
+    const mo = new MutationObserver(attach);
+    mo.observe(document.body, { childList: true, subtree: true });
+    return () => { obs.disconnect(); mo.disconnect(); };
+  }, []);
   return (
-    <div className="min-h-screen flex bg-gray-50 font-sans">
-      <Sidebar />
-      <div className="flex-1 flex flex-col">
-        {/* Topbar stays at the top of the main content */}
-        <Topbar title={pageTitle} search={search} onSearch={setSearch} />
-        <main className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8">
-          <Routes>
-            {routes.map(({ path, component: Component }) => (
-              <Route
-                key={path}
-                path={path}
-                element={<Component search={search} />}
-              />
-            ))}
-          </Routes>
-        </main>
-      </div>
+    <div className="min-h-screen">
+      <Nav />
+      <main>
+        <Routes>
+          {routes.map(({ path, component: C }) => (
+            <Route key={path} path={path} element={<C />} />
+          ))}
+        </Routes>
+      </main>
     </div>
   );
 }

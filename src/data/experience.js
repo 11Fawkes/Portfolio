@@ -1,3 +1,44 @@
+/**
+ * ============================================================
+ * EXPERIENCE — src/data/experience.js
+ * ============================================================
+ *
+ * HOW TO ADD A NEW ROLE
+ * ─────────────────────
+ * Add a new object at the TOP of the array (most recent first).
+ * All fields are used — don't skip any.
+ *
+ * FIELD REFERENCE
+ * ─────────────────
+ *   role           string   — job title
+ *   company        string   — company name and location
+ *   dates          string   — e.g. 'Mar 2022 – Mar 2024' or 'Jan 2026 – Present'
+ *   context        string   — 1 sentence setting the scene
+ *   responsibilities string — 1 sentence summary of what you did day-to-day
+ *   impact         array    — specific, quantified bullet points (3-5 recommended)
+ *   tools          array    — tools/tech used e.g. ['SQL', 'Power BI', 'Oracle Fusion']
+ *   themes         string   — comma-separated themes e.g. 'Data automation, ERP, reporting'
+ *   impactSummary  string   — 1 sentence used as the preview on the Home page
+ *
+ * TEMPLATE — copy from here:
+ * ─────────────────────────
+ * {
+ *   role: 'Your Job Title',
+ *   company: 'Company Name | City',
+ *   dates: 'Mon YYYY – Mon YYYY',
+ *   context: 'One sentence setting the scene for this role.',
+ *   responsibilities: 'One sentence describing day-to-day work.',
+ *   impact: [
+ *     'Specific quantified achievement — e.g. reduced X by Y%.',
+ *     'Another achievement with a real number or outcome.',
+ *     'Third achievement.',
+ *   ],
+ *   tools: ['Tool1', 'Tool2', 'Tool3'],
+ *   themes: 'Theme one, theme two, theme three',
+ *   impactSummary: 'One sentence used as preview on the home page.',
+ * },
+ * ============================================================
+ */
 const experience = [
   {
     role: 'Independent Consultant – Business & AI Strategy',

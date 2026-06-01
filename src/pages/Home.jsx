@@ -1,89 +1,163 @@
 import { Link } from 'react-router-dom';
 import profile from '../data/profile.js';
 import kpis from '../data/kpis.js';
-import experiences from '../data/experience.js';
 import projects from '../data/projects.js';
-import Card from '../components/Card.jsx';
-import KPITile from '../components/KPITile.jsx';
-import VideoEmbed from '../components/VideoEmbed.jsx';
-
+import experiences from '../data/experience.js';
+import Btn from '../components/Btn.jsx';
+// ← To change which projects appear on the home page: edit this array
+const FEATURED = ['Return Radar', 'Cohort Retention Simulator', 'CAC Efficiency Dashboard'];
 export default function Home() {
-  // Feature the NTT Global role (index 2) as the strongest experience
-  const featuredExperience = experiences[2];
-  const featuredProjects = projects.slice(0, 2);
-
+  const featured = projects.filter(p => FEATURED.includes(p.title));
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-      {/* Header */}
-      <section className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center mt-4">
-        <div className="flex justify-center lg:justify-start">
-          <img
-            src={profile.photo}
-            alt="Profile"
-            className="w-40 h-40 rounded-full object-cover border border-gray-300 shadow-sm"
-          />
-        </div>
-        <div className="lg:col-span-2 space-y-4">
+    <div>
+      {/* ── HERO ─────────────────────────────────────────── */}
+      <section style={{ minHeight: '95vh', display: 'flex', alignItems: 'flex-end',
+                        padding: '5rem var(--pad-x) 4rem' }}>
+        <div style={{ maxWidth: 'var(--max-w)', margin: '0 auto', width: '100%',
+                      display: 'grid', gridTemplateColumns: '1fr 1fr',
+                      gap: '5rem', alignItems: 'end' }}>
           <div>
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900">{profile.name}</h1>
-            {profile.tagline && (
-              <p className="text-md text-primary mt-1">{profile.tagline}</p>
-            )}
-            <p className="mt-3 text-gray-700 max-w-prose">{profile.intro}</p>
+            <p className="label" style={{ color: 'var(--c-muted)', marginBottom: '1.5rem',
+                                          display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <span style={{ color: 'var(--c-gold)' }}>—</span>
+              Kreuzberg, Berlin · Open to work
+            </p>
+            {/* Stamp name — punk gold shadow. Disable in tokens.css: set --stamp-x and --stamp-y to 0px */}
+            <h1 className="font-display font-extrabold"
+                style={{ fontSize: 'var(--fs-hero)', letterSpacing: '-0.03em',
+                         lineHeight: 0.95, marginBottom: '1.5rem' }}>
+              {['Dhruv', 'Kumar'].map(word => (
+                <div key={word} className="stamp-wrap" style={{ display: 'block' }}>
+                  <span className="stamp-front">{word}</span>
+                  <span className="stamp-back" aria-hidden="true">{word}</span>
+                </div>
+              ))}
+            </h1>
+            {/* Tagline + hand-drawn underline */}
+            <div style={{ marginBottom: '1.5rem' }}>
+              <p className="font-display font-semibold text-ink-3" style={{ fontSize: 'var(--fs-h2)' }}>
+                {profile.title}
+              </p>
+              <svg height="8" viewBox="0 0 380 8" fill="none" style={{ marginTop: '0.35rem', width: '100%', maxWidth: '22rem' }}>
+                <path d="M2 5.5C70 2 160 1 250 3.5C310 5.5 360 6 378 4"
+                      stroke="var(--c-gold)" strokeWidth="2.5" strokeLinecap="round"/>
+              </svg>
+            </div>
+            <p className="text-muted leading-relaxed" style={{ maxWidth: '42ch', marginBottom: '2.5rem', fontWeight: 300 }}>
+              {profile.intro}
+            </p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
+              <Btn href="/projects">View Projects</Btn>
+              <Btn href={profile.resumeUrl} variant="gold" download>Download CV</Btn>
+            </div>
           </div>
-          <div className="flex flex-wrap gap-4 mt-4">
-            <Link to="/projects" className="bg-primary text-white px-4 py-2 rounded-md text-sm hover:bg-primary/90">
-              View Projects
+          {/* Photo + KPIs */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            <div style={{ position: 'relative' }}>
+              <img src={profile.photo} alt="Dhruv Kumar"
+                style={{ width: '100%', maxWidth: '22rem', margin: '0 auto', display: 'block',
+                         aspectRatio: '3/4', objectFit: 'cover', objectPosition: 'top center',
+                         filter: 'grayscale(15%) contrast(1.05)',
+                         border: 'var(--b-light)' }} />
+              <div style={{ position: 'absolute', bottom: '-10px', right: '-10px', width: '52px', height: '52px',
+                            borderRight: '2px solid var(--c-gold)', borderBottom: '2px solid var(--c-gold)' }} />
+              <div style={{ position: 'absolute', top: '-10px', left: '-10px', width: '52px', height: '52px',
+                            borderLeft: '2px solid var(--c-gold)', borderTop: '2px solid var(--c-gold)' }} />
+            </div>
+            {/* KPIs — values from src/data/kpis.js */}
+            <div className="g-grid" style={{ gridTemplateColumns: '1fr 1fr' }}>
+              {kpis.map((k, i) => (
+                <div key={i} style={{ padding: '1.25rem' }}>
+                  <div className="font-display font-bold text-ink" style={{ fontSize: '1.75rem' }}>{k.value}</div>
+                  <div className="label" style={{ color: 'var(--c-muted)', marginTop: '0.3rem' }}>{k.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* ── FEATURED PROJECTS ─────────────────────────────── */}
+      <section className="section reveal">
+        <div className="section-inner">
+          <div className="sec-header">
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem' }}>
+              <span className="sec-num">01</span>
+              <h2 className="sec-title">Featured Work</h2>
+            </div>
+            <Link to="/projects" className="font-mono text-muted hover:text-gold transition-colors"
+                  style={{ fontSize: 'var(--fs-xs)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+              All projects →
             </Link>
-            <a href={profile.resumeUrl} className="bg-gray-200 text-gray-700 px-4 py-2 rounded-md text-sm hover:bg-gray-300" download>
-              Download Resume
-            </a>
+          </div>
+          <div className="g-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+            {featured.map(p => (
+              <Link key={p.title} to="/projects"
+                style={{ padding: '2rem', display: 'flex', flexDirection: 'column',
+                         textDecoration: 'none', color: 'inherit',
+                         transition: 'background var(--t-base)' }}
+                onMouseEnter={e => e.currentTarget.style.background = 'var(--c-paper-2)'}
+                onMouseLeave={e => e.currentTarget.style.background = 'var(--c-paper)'}>
+                <span className="label" style={{ marginBottom: '1rem' }}>{p.category}</span>
+                <h3 className="font-display font-bold text-ink leading-tight"
+                    style={{ fontSize: 'var(--fs-h2)', marginBottom: '0.75rem' }}>
+                  {p.title}
+                </h3>
+                <p className="text-muted leading-relaxed flex-1"
+                   style={{ fontSize: 'var(--fs-sm)', fontWeight: 300, marginBottom: '1.5rem' }}>
+                  {p.outcome.substring(0, 120)}...
+                </p>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.3rem' }}>
+                  {p.tags.slice(0, 3).map(t => <span key={t} className="tag">{t}</span>)}
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
-
-      {/* Video — only shown if a URL is set */}
-      {profile.videoUrl && (
-        <section>
-          <h3 className="text-lg font-semibold mb-2">60-second overview</h3>
-          <p className="text-sm text-gray-600 mb-2">{profile.videoDescription}</p>
-          <VideoEmbed videoUrl={profile.videoUrl} />
-        </section>
-      )}
-
-      {/* KPIs */}
-      <section>
-        <h3 className="text-xl font-semibold mb-4">Key Metrics</h3>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {kpis.map((kpi, index) => (
-            <KPITile key={index} kpi={kpi} />
-          ))}
+      {/* ── EXPERIENCE STRIP (dark) ───────────────────────── */}
+      <section className="section reveal" style={{ background: 'var(--c-ink-2)' }}>
+        <div className="section-inner">
+          <div className="sec-header dark">
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem' }}>
+              <span className="sec-num">02</span>
+              <h2 className="sec-title dark">Experience</h2>
+            </div>
+            <Link to="/experience" className="font-mono hover:text-gold transition-colors"
+                  style={{ fontSize: 'var(--fs-xs)', letterSpacing: '0.1em',
+                           textTransform: 'uppercase', color: 'var(--c-muted)' }}>
+              Full timeline →
+            </Link>
+          </div>
+          <div className="g-grid-dark" style={{ gridTemplateColumns: '1fr 1fr' }}>
+            {experiences.slice(0, 4).map((exp, i) => (
+              <div key={i} style={{ padding: '2rem' }}>
+                <div className="label" style={{ marginBottom: '0.5rem' }}>{exp.dates}</div>
+                <div className="font-display font-semibold" style={{ color: 'var(--c-paper)',
+                     fontSize: 'var(--fs-h2)', marginBottom: '0.35rem' }}>{exp.role}</div>
+                <div className="font-mono text-muted" style={{ fontSize: 'var(--fs-xs)', marginBottom: '1rem' }}>
+                  {exp.company}
+                </div>
+                <p style={{ fontSize: 'var(--fs-sm)', color: '#8a8a8a', fontWeight: 300, lineHeight: 1.65 }}>
+                  {exp.impactSummary}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
-
-      {/* Featured */}
-      <section>
-        <h3 className="text-xl font-semibold mb-4">Featured</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {featuredExperience && (
-            <Card>
-              <h4 className="text-lg font-semibold text-gray-900">{featuredExperience.role}</h4>
-              <p className="text-sm text-gray-600">{featuredExperience.company}</p>
-              <p className="text-sm text-gray-600 mt-1">{featuredExperience.impactSummary}</p>
-              <Link to="/experience" className="text-primary hover:underline text-sm mt-2 inline-block">
-                See Experience
-              </Link>
-            </Card>
-          )}
-          {featuredProjects.map((p) => (
-            <Card key={p.title}>
-              <h4 className="text-lg font-semibold text-gray-900">{p.title}</h4>
-              <p className="text-sm text-gray-600">{p.outcome || p.problem}</p>
-              <Link to="/projects" className="text-primary hover:underline text-sm mt-2 inline-block">
-                View Project
-              </Link>
-            </Card>
-          ))}
+      {/* ── QUOTE ─────────────────────────────────────────── */}
+      <section className="section reveal">
+        <div className="section-inner">
+          <blockquote style={{ maxWidth: '48rem' }}>
+            <p className="font-display font-semibold text-ink leading-tight"
+               style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', marginBottom: '1.5rem' }}>
+              "{profile.valueStatement}"
+            </p>
+            <footer className="font-mono text-muted"
+                    style={{ fontSize: 'var(--fs-xs)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+              — {profile.name.split(' ').slice(0, 2).join(' ')}, Berlin 2026
+            </footer>
+          </blockquote>
         </div>
       </section>
     </div>

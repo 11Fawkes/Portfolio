@@ -1,45 +1,25 @@
 import profile from '../data/profile.js';
-
-/**
- * Resume page: embeds the candidate's resume PDF using an <embed> tag and
- * provides quick access to download the PDF or visit LinkedIn.  Also shows
- * work authorization text.
- */
+import Btn from '../components/Btn.jsx';
 export default function Resume() {
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 space-y-6">
-      {/* Display resume pages as images */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {profile.resumeImages &&
-          profile.resumeImages.map((imgSrc, idx) => (
-            <img
-              key={idx}
-              src={imgSrc}
-              alt={`Resume page ${idx + 1}`}
-              className="w-full border border-gray-200 rounded-lg shadow-sm"
-            />
-          ))}
+    <div className="page" style={{ paddingTop: '6rem', paddingBottom: '6rem', maxWidth: '48rem' }}>
+      <div className="sec-header">
+        <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem' }}>
+          <span className="sec-num">05</span>
+          <h1 className="sec-title">Resume</h1>
+        </div>
       </div>
-      <div className="flex flex-wrap gap-4">
-        <a
-          href={profile.resumeUrl}
-          download
-          className="bg-primary text-white px-4 py-2 rounded-md text-sm hover:bg-primary/90"
-        >
-          Download PDF
-        </a>
-        <a
-          href={profile.links.linkedin || '#'}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-gray-200 text-gray-700 px-4 py-2 rounded-md text-sm hover:bg-gray-300"
-        >
-          Open LinkedIn
-        </a>
-      </div>
-      <p className="text-sm text-gray-600">
+      <p className="text-muted leading-relaxed" style={{ fontWeight: 300, marginBottom: '2.5rem' }}>
         {profile.workAuth}
       </p>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginBottom: '3rem' }}>
+        <Btn href={profile.resumeUrl} download>Download PDF →</Btn>
+        <Btn href={profile.links.linkedin} variant="gold">Open LinkedIn ↗</Btn>
+      </div>
+      <div style={{ border: 'var(--b-light)' }}>
+        <iframe src={profile.resumeUrl} style={{ width: '100%', height: '80vh', border: 'none' }}
+                title="Dhruv Kumar Resume" />
+      </div>
     </div>
   );
 }

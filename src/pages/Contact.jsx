@@ -1,79 +1,61 @@
+import { useState } from 'react';
 import profile from '../data/profile.js';
-import Card from '../components/Card.jsx';
-
-/**
- * Contact page: lists ways to get in touch via email, LinkedIn and GitHub.  The
- * email field includes a button to copy the address to the clipboard using
- * the modern clipboard API.  Each contact method uses a Card for a clean
- * presentation.
- */
+// ← To add a contact method: add one object to this array
+const LINKS = [
+  { label: 'Email',     value: 'dhruvvkumar98@gmail.com',             href: `mailto:${profile.links?.email}`, copy: true },
+  { label: 'LinkedIn',  value: 'linkedin.com/in/dhruv-kumar-a54a2916b', href: profile.links?.linkedin },
+  { label: 'GitHub',    value: 'github.com/11Fawkes',                   href: profile.links?.github },
+  { label: 'Portfolio', value: '11fawkes.github.io/Portfolio',           href: 'https://11fawkes.github.io/Portfolio' },
+];
 export default function Contact() {
-  const copyEmail = () => {
-    navigator.clipboard
-      .writeText(profile.links.email || '')
-      .catch(() => {});
-  };
-
+  const [copied, setCopied] = useState(false);
+  const copy = v => navigator.clipboard.writeText(v)
+    .then(() => { setCopied(true); setTimeout(() => setCopied(false), 2000); });
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 space-y-4">
-      {/* Email */}
-      <Card className="bg-primary/5">
-        <div className="flex items-center space-x-4">
-          <div className="text-3xl">📧</div>
-          <div className="flex-1">
-            <h3 className="text-lg font-semibold text-gray-900 mb-1">Email</h3>
-            <p className="text-sm text-gray-700 mb-2">{profile.links.email}</p>
-            <div className="flex space-x-3">
-              <a
-                href={`mailto:${profile.links.email}`}
-                className="text-primary text-sm hover:underline"
-              >
-                Send Email
-              </a>
-              <button
-                onClick={copyEmail}
-                className="text-sm text-gray-600 hover:text-primary"
-              >
-                Copy
-              </button>
+    <div className="page" style={{ paddingTop: '6rem', paddingBottom: '6rem' }}>
+      <div className="sec-header">
+        <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem' }}>
+          <span className="sec-num">06</span>
+          <h1 className="sec-title">Contact</h1>
+        </div>
+      </div>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', marginBottom: '3rem' }}>
+        <div>
+          <p className="font-display font-semibold text-ink leading-tight"
+             style={{ fontSize: 'var(--fs-h1)', marginBottom: '1rem' }}>
+            Open to BA and DA roles at Berlin companies.
+          </p>
+          <p className="text-muted leading-relaxed" style={{ fontSize: 'var(--fs-sm)', fontWeight: 300 }}>
+            Available immediately. German B1 → B2.
+            Job Seeker Visa (§20 AufenthG). Let's talk.
+          </p>
+        </div>
+        <div className="g-grid">
+          {LINKS.map(link => (
+            <div key={link.label} style={{ display: 'flex', justifyContent: 'space-between',
+                                           alignItems: 'center', padding: '1.1rem 1.25rem' }}>
+              <div>
+                <div className="label" style={{ marginBottom: '0.25rem' }}>{link.label}</div>
+                <div className="text-ink" style={{ fontSize: 'var(--fs-sm)', fontWeight: 300 }}>{link.value}</div>
+              </div>
+              {link.copy ? (
+                <button onClick={() => copy(profile.links?.email)}
+                  className="font-mono text-muted hover:text-gold transition-colors"
+                  style={{ fontSize: 'var(--fs-xs)', letterSpacing: '0.1em', textTransform: 'uppercase',
+                           background: 'none', border: 'none', cursor: 'pointer' }}>
+                  {copied ? 'copied ✓' : 'copy'}
+                </button>
+              ) : (
+                <a href={link.href} target="_blank" rel="noopener noreferrer"
+                   className="font-mono text-muted hover:text-gold transition-colors"
+                   style={{ fontSize: 'var(--fs-xs)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+                  open ↗
+                </a>
+              )}
             </div>
-          </div>
+          ))}
         </div>
-      </Card>
-      {/* LinkedIn */}
-      <Card className="bg-primary/5">
-        <div className="flex items-center space-x-4">
-          <div className="text-3xl">🔗</div>
-          <div className="flex-1">
-            <h3 className="text-lg font-semibold text-gray-900 mb-1">LinkedIn</h3>
-            <a
-              href={profile.links.linkedin || '#'}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary text-sm hover:underline"
-            >
-              {profile.links.linkedin || 'LinkedIn Profile'}
-            </a>
-          </div>
-        </div>
-      </Card>
-      {/* GitHub */}
-      <Card className="bg-primary/5">
-        <div className="flex items-center space-x-4">
-          <div className="text-3xl">💻</div>
-          <div className="flex-1">
-            <h3 className="text-lg font-semibold text-gray-900 mb-1">GitHub</h3>
-            <a
-              href={profile.links.github || '#'}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary text-sm hover:underline"
-            >
-              {profile.links.github || 'GitHub Profile'}
-            </a>
-          </div>
-        </div>
-      </Card>
+      </div>
     </div>
   );
 }
