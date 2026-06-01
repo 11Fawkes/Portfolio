@@ -158,6 +158,33 @@ export default function Hobbies() {
           </div>
         </div>
 
+        {/* What I'm building toward — full width */}
+        <div style={{
+          gridColumn: 'span 4',
+          background: '#1a1208',
+          border: '0.5px solid #2e2010',
+          borderRadius: '16px',
+          padding: '28px',
+          cursor: 'default',
+        }}>
+          <div style={{ fontSize:'10px', fontWeight:'500', letterSpacing:'0.06em', textTransform:'uppercase', color:'#c0392b', marginBottom:'16px' }}>What I'm building toward</div>
+          <div style={{ display:'grid', gridTemplateColumns:'1fr 1.8fr 1.8fr', gap:'32px', alignItems:'start' }}>
+            <div>
+              <div style={{ fontSize:'18px', fontWeight:'600', color:'#f0ebe0', lineHeight:'1.3', marginBottom:'8px' }}>Creator.<br/>Researcher.<br/>Problem finder.</div>
+              <div style={{ fontSize:'11px', color:'#7a6040', lineHeight:'1.6', marginTop:'12px' }}>The projects are not just portfolio pieces. They're how I think.</div>
+            </div>
+            <div style={{ fontSize:'12px', color:'#a09070', lineHeight:'1.75' }}>
+              Most of the work in this portfolio starts with the same observation: one side of a market has sophisticated tools and the other side has a spreadsheet. Zalando has machine learning models for return rate prediction. Their seller partners have a spreadsheet. That asymmetry is what's interesting — not just as a business problem, but as a design problem. Who builds for the other side?
+            </div>
+            <div style={{ fontSize:'12px', color:'#a09070', lineHeight:'1.75' }}>
+              Ideation isn't a phase before the real work. It is the real work. Finding the right problem, framing it so a non-technical operator can act on it, understanding what they actually need to see — that's where most of the time goes. The code is just how you ship the answer.
+              <div style={{ marginTop:'12px', color:'#c0392b', fontSize:'12px', fontStyle:'italic' }}>
+                "Why doesn't this exist yet?" is the question driving all of it.
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <style>{`

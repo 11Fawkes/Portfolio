@@ -5,9 +5,9 @@ const profile = {
   title: 'Business Analyst · Data Analytics · Decision Intelligence',
   location: 'Berlin, Germany',
   intro:
-    'BA and decision analytics professional with 3+ years embedding with enterprise clients (NTT Global) on Oracle Fusion — translating messy operational data into Power BI dashboards, automation scripts, and planning tools that finance and procurement teams actually use. M.Sc. in Data Science. Based in Berlin, German B1 → B2.',
+    'BA and decision analytics professional with 3+ years embedding with enterprise clients (NTT Global) on Oracle Fusion — translating messy operational data into Power BI dashboards, automation scripts, and planning tools that finance and procurement teams actually use. M.Sc. in Data Science. Based in Berlin, German B1 → B2. Building toward something bigger.',
   valueStatement:
-    'Turning complex business problems into structured, data-backed decisions that stakeholders can act on.',
+    'I want to build things that touch more people than I\'ll ever meet — tools, systems, ideas that create ripple effects on real problems.',
   videoUrl: '',
   videoDescription:
     'A 60-second overview of my background, the type of problems I solve, and what I\'m looking for in Berlin.',
