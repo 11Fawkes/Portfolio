@@ -15,16 +15,16 @@
      To repaint the whole site: edit only these 10 lines.
      Current palette: bone + warm dark brown + red accent.
      ──────────────────────────────────────────────────────── */
-  --c-ink:      #f8f8f8;   /* body text, primary headers */
-  --c-ink-2:    #e8e8e8;   /* dark section backgrounds   */
-  --c-ink-3:    #c0c0c0;   /* dark card backgrounds      */
-  --c-paper:    #0a0a0a;   /* main page background       */
-  --c-paper-2:  #111111;   /* hover background           */
-  --c-paper-3:  #1e1e1e;   /* borders, dividers          */
-  --c-gold:     #2040e0;   /* accent: links, tags, lines */
-  --c-gold-2:   #3050f0;   /* accent hover state         */
-  --c-muted:    #909090;   /* secondary text             */
-  --c-faint:    #606060;   /* tertiary text              */
+  --c-ink:      #f5f0e8;   /* body text, primary headers */
+  --c-ink-2:    #ede8dc;   /* dark section backgrounds   */
+  --c-ink-3:    #d8d0c0;   /* dark card backgrounds      */
+  --c-paper:    #4a72d4;   /* main page background       */
+  --c-paper-2:  #3f64c0;   /* hover background           */
+  --c-paper-3:  #3458b0;   /* borders, dividers          */
+  --c-gold:     #f5f0e8;   /* accent: links, tags, lines */
+  --c-gold-2:   #ffffff;   /* accent hover state         */
+  --c-muted:    #c8d8f8;   /* secondary text             */
+  --c-faint:    #a0b8e8;   /* tertiary text              */
   /* ── FONTS ────────────────────────────────────────────────
      To swap fonts:
      1. Change the family name below
