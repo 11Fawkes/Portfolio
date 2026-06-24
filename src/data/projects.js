@@ -71,6 +71,35 @@
  */
 const projects = [
   {
+    title: 'Decision Ledger',
+    category: 'Decision Intelligence',
+    problem: 'Organisations make hundreds of strategic decisions per quarter but have no system for tracking them. When a product launch fails, there is no trail back to the assumptions that justified it. Decisions live in meeting notes, Slack threads, and the memories of people who may have already left.',
+    decision: 'Build a full-stack decision tracking and review system that captures decisions at the point they are made, structures them with context and measurable expected outcomes, tracks actual results, and surfaces patterns through an analytical SQL layer.',
+    tags: ['PostgreSQL', 'FastAPI', 'Streamlit', 'Docker', 'SQLAlchemy', 'Plotly'],
+    outcome: 'Deployed a 3-service Docker Compose system with 7 analytical SQL views, async REST API with auth middleware, and an interactive Streamlit dashboard — tracking 50 decisions across 5 categories for a fictional e-commerce company.',
+    context: 'Portfolio project built to substantiate the Decision Intelligence claim in the tagline. Introduces SQL schema design, analytical views, and API development to the portfolio — all previously absent.',
+    business_question: 'What percentage of our decisions achieved their projected outcome, which categories have the highest reversal rate, and how long does it take to move from problem identification to resolution?',
+    data: 'Synthetic seed data: 50 decisions and 26 reviews for a fictional subscription e-commerce company (Nexura Commerce), spanning 6 months across pricing, product, hiring, market entry, and operational categories.',
+    approach: 'Database-first build: PostgreSQL schema with constraints, indexes, and triggers designed before any application code. 7 analytical views (accuracy, velocity, reversal rate, compliance, summary) using window functions and CTEs. Async FastAPI backend with SQLAlchemy 2.0 ORM. Streamlit frontend with 4 dashboard pages and 7 Plotly chart types.',
+    insights: [
+      'Decision accuracy varies sharply by category — pricing decisions succeeded at a higher rate than hiring decisions, suggesting different information quality at the point of decision.',
+      'Review compliance (whether teams actually revisit decisions at their scheduled review date) is the most actionable metric — low compliance means the feedback loop is broken regardless of decision quality.',
+      'Reversal rate by category reveals where the organisation is systematically under-informed, not just unlucky.',
+    ],
+    recommendation: 'Any team serious about improving decision quality needs a structured capture-and-review loop. The analytical layer — not the storage — is what turns a decision log into a decision intelligence system.',
+    validation: '30+ automated API tests with async httpx client, SQL view correctness tests with deterministic seed data, CI pipeline (GitHub Actions) with PostgreSQL 16 service container, ruff linting, and full security audit.',
+    githubUrl: 'https://github.com/11Fawkes/decision-ledger',
+    artifacts: [
+      { label: 'GitHub', link: 'https://github.com/11Fawkes/decision-ledger' },
+    ],
+    skillsUsage: [
+      { name: 'SQL / PostgreSQL', value: 30 },
+      { name: 'Python / FastAPI', value: 30 },
+      { name: 'Streamlit / Plotly', value: 20 },
+      { name: 'Docker / DevOps', value: 20 },
+    ],
+  },
+  {
     title: 'XAI Stock Prediction Dashboard',
     category: 'ML & Explainability',
     problem: 'Investment decisions rely on black-box models that stakeholders can\'t interrogate or trust.',
