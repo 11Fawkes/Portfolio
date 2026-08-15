@@ -4,8 +4,8 @@ import profile from '../data/profile.js';
 const LINKS = [
   { label: 'Email',     value: 'dhruvvkumar98@gmail.com',             href: `mailto:${profile.links?.email}`, copy: true },
   { label: 'LinkedIn',  value: 'linkedin.com/in/dhruv-kumar-a54a2916b', href: profile.links?.linkedin },
-  { label: 'GitHub',    value: 'github.com/11Fawkes',                   href: profile.links?.github },
-  { label: 'Portfolio', value: '11fawkes.github.io/Portfolio',           href: 'https://11fawkes.github.io/Portfolio' },
+  { label: 'GitHub',    value: 'github.com/DhruvvKumar98',               href: profile.links?.github },
+  { label: 'Portfolio', value: 'dhruvvkumar98.github.io/Portfolio',      href: 'https://dhruvvkumar98.github.io/Portfolio' },
 ];
 export default function Contact() {
   const [copied, setCopied] = useState(false);
