@@ -14,7 +14,7 @@ const profile = {
   links: {
     email: 'dhruvvkumar98@gmail.com',
     linkedin: 'https://www.linkedin.com/in/dhruv-kumar-a54a2916b/',
-    github: 'https://github.com/11Fawkes',
+    github: 'https://github.com/DhruvvKumar98',
   },
   resumeUrl: `${base}resume.pdf`,
   workAuth: 'Based in Berlin. Authorized to work in Germany (job-seeker visa). German B1, advancing to B2.',

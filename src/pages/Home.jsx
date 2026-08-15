@@ -5,7 +5,7 @@ import projects from '../data/projects.js';
 import experiences from '../data/experience.js';
 import Btn from '../components/Btn.jsx';
 // ← To change which projects appear on the home page: edit this array
-const FEATURED = ['Return Radar', 'Cohort Retention Simulator', 'CAC Efficiency Dashboard'];
+const FEATURED = ['Return Radar', 'Decision Ledger', 'Cohort Retention Simulator'];
 export default function Home() {
   const featured = projects.filter(p => FEATURED.includes(p.title));
   return (

@@ -43,10 +43,10 @@
  *   category: 'Business Analysis',      // pick from existing or add new
  *   tags: ['Python', 'Streamlit'],
  *   outcome: 'One or two sentences describing what was built and what it does.',
- *   githubUrl: 'https://github.com/11Fawkes/your-repo',
+ *   githubUrl: 'https://github.com/DhruvvKumar98/your-repo',
  *   artifacts: [
  *     { label: 'Live Tool', link: 'https://your-live-url.streamlit.app' },
- *     { label: 'GitHub',    link: 'https://github.com/11Fawkes/your-repo' },
+ *     { label: 'GitHub',    link: 'https://github.com/DhruvvKumar98/your-repo' },
  *   ],
  *   skillsUsage: [
  *     { name: 'Business Analysis', value: 40 },
@@ -71,6 +71,37 @@
  */
 const projects = [
   {
+    title: 'Decision Ledger',
+    category: 'Business Analysis',
+    problem: 'Organisations make hundreds of consequential decisions each year and rarely know which ones actually worked — no structured capture, no follow-up, no pattern recognition.',
+    decision: 'Build a full-stack decision tracking system that captures decisions at the moment they are made, with structured context, data sources, and measurable expected outcomes, then closes the loop by tracking actual results.',
+    tags: ['Python', 'Streamlit', 'FastAPI', 'PostgreSQL', 'Docker', 'SQL'],
+    outcome: 'Full-stack decision tracking system — PostgreSQL + FastAPI + Streamlit with analytical SQL views, async API, interactive dashboard, and Docker Compose orchestration.',
+    context: 'Built for product and strategy teams that want to turn decision-making into a measurable practice, not just a process.',
+    business_question: 'How can organisations systematically capture, track, and learn from their decisions to improve future decision-making quality?',
+    data: 'Structured decision records with context fields, data source references, expected outcomes, and actual results tracked over time.',
+    approach: 'PostgreSQL for structured storage with analytical SQL views. FastAPI async API for CRUD operations. Streamlit dashboard for interactive exploration. Docker Compose for orchestration.',
+    insights: [
+      'Most organisations have no system for tracking whether past decisions worked — they repeat the same mistakes because institutional memory lives in email threads and meeting notes.',
+      'Structured decision capture at the point of decision forces clarity: what are we deciding, what data supports it, what outcome do we expect, and how will we measure it.',
+      'The analytics layer surfaces patterns over time — which types of decisions have the best accuracy rates, which data sources lead to better outcomes.',
+    ],
+    recommendation: 'Every team that makes consequential decisions should have a lightweight decision log. The cost of capturing is minutes; the cost of not capturing is repeated strategic errors.',
+    validation: 'Full-stack tested with Docker Compose. Dashboard validated with simulated decision data across multiple time horizons.',
+    githubUrl: 'https://github.com/DhruvvKumar98/decision-ledger',
+    liveUrl: 'https://decision-ledger-ietcgke26aemhzqq9nquvt.streamlit.app/',
+    artifacts: [
+      { label: 'Live Tool', link: 'https://decision-ledger-ietcgke26aemhzqq9nquvt.streamlit.app/' },
+      { label: 'GitHub', link: 'https://github.com/DhruvvKumar98/decision-ledger' },
+    ],
+    skillsUsage: [
+      { name: 'Full-Stack Development', value: 35 },
+      { name: 'SQL / PostgreSQL', value: 25 },
+      { name: 'Python / FastAPI', value: 25 },
+      { name: 'Business Analysis', value: 15 },
+    ],
+  },
+  {
     title: 'XAI Stock Prediction Dashboard',
     category: 'ML & Explainability',
     problem: 'Investment decisions rely on black-box models that stakeholders can\'t interrogate or trust.',
@@ -88,9 +119,9 @@ const projects = [
     ],
     recommendation: 'Integrate explainability as a first-class business requirement in any AI system where humans need to act on model outputs.',
     validation: 'Test-set-only RMSE/MAE evaluation across multiple stocks and time periods to ensure honest, reproducible results.',
-    githubUrl: 'https://github.com/11Fawkes/Thesis-Project-AI-Driven-Financial-Tool-for-Optimized-Investment-Strategies',
+    githubUrl: 'https://github.com/DhruvvKumar98/Thesis-Project-AI-Driven-Financial-Tool-for-Optimized-Investment-Strategies',
     artifacts: [
-      { label: 'GitHub', link: 'https://github.com/11Fawkes/Thesis-Project-AI-Driven-Financial-Tool-for-Optimized-Investment-Strategies' },
+      { label: 'GitHub', link: 'https://github.com/DhruvvKumar98/Thesis-Project-AI-Driven-Financial-Tool-for-Optimized-Investment-Strategies' },
     ],
     skillsUsage: [
       { name: 'LSTM / TensorFlow', value: 35 },
@@ -117,9 +148,9 @@ const projects = [
     ],
     recommendation: 'Implement targeted bundle promotions for top lift pairs and redesign floor layout to co-locate high-affinity categories.',
     validation: 'Rules validated against holdout transactions; top recommendations tested with A/B framing.',
-    githubUrl: 'https://github.com/11Fawkes/Market-Basket-Analysis-',
+    githubUrl: 'https://github.com/DhruvvKumar98/Market-Basket-Analysis-',
     artifacts: [
-      { label: 'GitHub', link: 'https://github.com/11Fawkes/Market-Basket-Analysis-' },
+      { label: 'GitHub', link: 'https://github.com/DhruvvKumar98/Market-Basket-Analysis-' },
     ],
     skillsUsage: [
       { name: 'Python / mlxtend', value: 45 },
@@ -145,9 +176,9 @@ const projects = [
     ],
     recommendation: 'Deploy hybrid approach with collaborative filtering as primary signal and content-based as fallback for new or sparse users.',
     validation: 'Offline evaluation using precision@k, recall@k, and NDCG on held-out interaction data.',
-    githubUrl: 'https://github.com/11Fawkes/E-Commerce-Recommendation-System-ML',
+    githubUrl: 'https://github.com/DhruvvKumar98/E-Commerce-Recommendation-System-ML',
     artifacts: [
-      { label: 'GitHub', link: 'https://github.com/11Fawkes/E-Commerce-Recommendation-System-ML' },
+      { label: 'GitHub', link: 'https://github.com/DhruvvKumar98/E-Commerce-Recommendation-System-ML' },
     ],
     skillsUsage: [
       { name: 'Collaborative Filtering', value: 35 },
@@ -174,9 +205,9 @@ const projects = [
     ],
     recommendation: 'For analytics use cases requiring sub-hourly freshness, streaming pipelines with Kafka + orchestration are significantly more reliable than cron-based batch ETL.',
     validation: 'End-to-end pipeline tested with simulated load; DAG reliability and latency measured across runs.',
-    githubUrl: 'https://github.com/11Fawkes/Data-Engineering-with-Kafka-Airflow-GCP-Real-time-Data-Pipeline',
+    githubUrl: 'https://github.com/DhruvvKumar98/Data-Engineering-with-Kafka-Airflow-GCP-Real-time-Data-Pipeline',
     artifacts: [
-      { label: 'GitHub', link: 'https://github.com/11Fawkes/Data-Engineering-with-Kafka-Airflow-GCP-Real-time-Data-Pipeline' },
+      { label: 'GitHub', link: 'https://github.com/DhruvvKumar98/Data-Engineering-with-Kafka-Airflow-GCP-Real-time-Data-Pipeline' },
     ],
     skillsUsage: [
       { name: 'Apache Kafka', value: 30 },
@@ -203,9 +234,9 @@ const projects = [
     ],
     recommendation: 'Run structured EDA before any modelling or dashboard build — assumptions made without it consistently produce wrong outputs.',
     validation: 'Findings cross-checked with domain knowledge and used to inform feature engineering decisions in downstream models.',
-    githubUrl: 'https://github.com/11Fawkes/Exploratory-Data-Analysis',
+    githubUrl: 'https://github.com/DhruvvKumar98/Exploratory-Data-Analysis',
     artifacts: [
-      { label: 'GitHub', link: 'https://github.com/11Fawkes/Exploratory-Data-Analysis' },
+      { label: 'GitHub', link: 'https://github.com/DhruvvKumar98/Exploratory-Data-Analysis' },
     ],
     skillsUsage: [
       { name: 'Pandas / NumPy', value: 40 },
@@ -231,10 +262,11 @@ const projects = [
     ],
     recommendation: 'For any platform-dependent SME, return rate management is not optional — it directly affects algorithmic visibility, cash flow, and account standing. Independent benchmarking tools fill a critical gap.',
     validation: 'Benchmarks cross-referenced across 15+ published academic and industry sources. Tool tested across all 7 product categories and edge cases (0% and 70% return rates).',
-    githubUrl: 'https://github.com/11Fawkes/return-radar',
+    githubUrl: 'https://github.com/DhruvvKumar98/return-radar',
+    liveUrl: 'https://return-radar-xzpldtsqyytl3rfiwsrlne.streamlit.app/',
     artifacts: [
       { label: 'Live Tool', link: 'https://return-radar-xzpldtsqyytl3rfiwsrlne.streamlit.app/' },
-      { label: 'GitHub', link: 'https://github.com/11Fawkes/return-radar' },
+      { label: 'GitHub', link: 'https://github.com/DhruvvKumar98/return-radar' },
     ],
     skillsUsage: [
       { name: 'Business Analysis', value: 35 },
@@ -261,10 +293,11 @@ const projects = [
     ],
     recommendation: 'At HelloFresh\'s scale (~500K new subscribers per quarter), a 2pp retention improvement in weeks 1–8 generates tens of millions in annual incremental gross profit. The Refresh is improving early metrics but FY2026 guidance confirms the structural problem is unsolved.',
     validation: 'Model validated against HelloFresh\'s disclosed 20-week net revenue per conversion metric. Sensitivity analysis tested across full slider range. Edge cases verified (0% churn, 100% churn, zero intervention cost).',
-    githubUrl: 'https://github.com/11Fawkes/cohort-retention-simulator',
-    liveUrl: '',
+    githubUrl: 'https://github.com/DhruvvKumar98/cohort-retention-simulator',
+    liveUrl: 'https://cohort-retention-simulator-b3z9wzt7c3jntzrulb69mh.streamlit.app/',
     artifacts: [
-      { label: 'GitHub', link: 'https://github.com/11Fawkes/cohort-retention-simulator' },
+      { label: 'Live Tool', link: 'https://cohort-retention-simulator-b3z9wzt7c3jntzrulb69mh.streamlit.app/' },
+      { label: 'GitHub', link: 'https://github.com/DhruvvKumar98/cohort-retention-simulator' },
     ],
     skillsUsage: [
       { name: 'Growth Modelling', value: 35 },
@@ -291,10 +324,11 @@ const projects = [
     ],
     recommendation: 'A 5pp reallocation from paid social to referral/CRM channels reduces blended CAC by approximately 8–12% at benchmark rates, with compounding effect as the owned channel base grows. Long-term CAC reduction requires investing in SEO and CRM infrastructure, not just shifting ad spend.',
     validation: 'Channel splits cross-referenced across Meta Ad Library, SimilarWeb, and LinkedIn Ad Library. Confidence indicators (HIGH/MEDIUM/LOW) assigned per channel per company. All scenario assumptions explicitly labelled throughout the tool.',
-    githubUrl: 'https://github.com/11Fawkes/cac-efficiency-dashboard',
-    liveUrl: '',
+    githubUrl: 'https://github.com/DhruvvKumar98/cac-efficiency-dashboard',
+    liveUrl: 'https://cac-efficiency-dashboard-me4vtotubamnjhr9ipc4qu.streamlit.app/',
     artifacts: [
-      { label: 'GitHub', link: 'https://github.com/11Fawkes/cac-efficiency-dashboard' },
+      { label: 'Live Tool', link: 'https://cac-efficiency-dashboard-me4vtotubamnjhr9ipc4qu.streamlit.app/' },
+      { label: 'GitHub', link: 'https://github.com/DhruvvKumar98/cac-efficiency-dashboard' },
     ],
     skillsUsage: [
       { name: 'Business Analysis', value: 30 },
