@@ -2,8 +2,8 @@
 // Content comes from src/data/experience.js — never edit content here.
 export default function ExperienceRow({ exp, dark = false }) {
   const c = {
-    primary:   dark ? 'var(--c-paper)'  : 'var(--c-ink)',
-    secondary: dark ? '#8a8a8a'         : 'var(--c-muted)',
+    primary:   'var(--c-ink)',
+    secondary: 'var(--c-muted)',
     border:    dark ? 'var(--c-ink-3)'  : 'var(--c-paper-3)',
   };
   return (

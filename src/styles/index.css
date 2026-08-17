@@ -35,7 +35,7 @@ body::after {
 .sec-header.dark { border-color: var(--c-ink-3); }
 .sec-num { font-family: var(--f-mono); font-size: var(--fs-xs); color: var(--c-gold); }
 .sec-title { font-family: var(--f-display); font-size: var(--fs-h1); font-weight: 700; }
-.sec-title.dark { color: var(--c-paper); }
+.sec-title.dark { color: var(--c-ink); }
 /* Stamp name effect — controlled by --stamp-x / --stamp-y in tokens.css */
 .stamp-wrap { position: relative; display: inline-block; line-height: 0.95; }
 .stamp-front { position: relative; z-index: 2; color: var(--c-ink); }

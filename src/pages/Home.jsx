@@ -35,7 +35,7 @@ export default function Home() {
             </h1>
             {/* Tagline + hand-drawn underline */}
             <div style={{ marginBottom: '1.5rem' }}>
-              <p className="font-display font-semibold text-ink-3" style={{ fontSize: 'var(--fs-h2)' }}>
+              <p className="font-display font-semibold text-muted" style={{ fontSize: 'var(--fs-h2)' }}>
                 {profile.title}
               </p>
               <svg height="8" viewBox="0 0 380 8" fill="none" style={{ marginTop: '0.35rem', width: '100%', maxWidth: '22rem' }}>
@@ -132,12 +132,12 @@ export default function Home() {
             {experiences.slice(0, 4).map((exp, i) => (
               <div key={i} style={{ padding: '2rem' }}>
                 <div className="label" style={{ marginBottom: '0.5rem' }}>{exp.dates}</div>
-                <div className="font-display font-semibold" style={{ color: 'var(--c-paper)',
+                <div className="font-display font-semibold" style={{ color: 'var(--c-ink)',
                      fontSize: 'var(--fs-h2)', marginBottom: '0.35rem' }}>{exp.role}</div>
                 <div className="font-mono text-muted" style={{ fontSize: 'var(--fs-xs)', marginBottom: '1rem' }}>
                   {exp.company}
                 </div>
-                <p style={{ fontSize: 'var(--fs-sm)', color: '#8a8a8a', fontWeight: 300, lineHeight: 1.65 }}>
+                <p style={{ fontSize: 'var(--fs-sm)', color: 'var(--c-muted)', fontWeight: 300, lineHeight: 1.65 }}>
                   {exp.impactSummary}
                 </p>
               </div>

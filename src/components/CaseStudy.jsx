@@ -45,7 +45,7 @@ export default function CaseStudy({ project, onClose }) {
         {SECTIONS.map(({ label, key }) => project[key] && (
           <div key={key} style={{ marginBottom: '2rem' }}>
             <div className="label" style={{ marginBottom: '0.75rem' }}>{label}</div>
-            <p className="text-ink-3 leading-relaxed"
+            <p className="text-muted leading-relaxed"
                style={{ fontSize: 'var(--fs-sm)', fontWeight: 300 }}>{project[key]}</p>
           </div>
         ))}
@@ -57,7 +57,7 @@ export default function CaseStudy({ project, onClose }) {
               {project.insights.map((ins, i) => (
                 <li key={i} style={{ display: 'flex', gap: '0.75rem',
                                      fontSize: 'var(--fs-sm)', fontWeight: 300,
-                                     color: 'var(--c-ink-3)', lineHeight: 1.65 }}>
+                                     color: 'var(--c-muted)', lineHeight: 1.65 }}>
                   <span className="text-gold" style={{ flexShrink: 0, marginTop: '0.125rem' }}>—</span>
                   <span>{ins}</span>
                 </li>

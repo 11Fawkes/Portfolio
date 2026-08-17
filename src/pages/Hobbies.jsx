@@ -79,8 +79,8 @@ export default function Hobbies() {
         >
           <div className="label" style={{ marginBottom: '12px' }}>Mode</div>
           <div style={{ fontSize: '28px', marginBottom: '10px' }}>⚡</div>
-          <div className="font-display font-semibold" style={{ fontSize: 'var(--fs-h2)', color: 'var(--c-paper)', marginBottom: '6px' }}>Thrives in chaos</div>
-          <div style={{ fontSize: 'var(--fs-sm)', color: '#8a8a8a', fontWeight: 300, lineHeight: 1.65 }}>Lightly undiagnosed ADHD. Endless energy around people. Needs constant new input.</div>
+          <div className="font-display font-semibold" style={{ fontSize: 'var(--fs-h2)', color: 'var(--c-ink)', marginBottom: '6px' }}>Thrives in chaos</div>
+          <div style={{ fontSize: 'var(--fs-sm)', color: 'var(--c-muted)', fontWeight: 300, lineHeight: 1.65 }}>Lightly undiagnosed ADHD. Endless energy around people. Needs constant new input.</div>
         </div>
 
         {/* Manga — tall */}
@@ -120,7 +120,7 @@ export default function Hobbies() {
           onMouseLeave={e => { e.currentTarget.style.background = 'var(--c-ink-2)'; }}
         >
           <div className="label" style={{ marginBottom: '12px' }}>Social life</div>
-          <div className="font-display font-semibold" style={{ fontSize: 'var(--fs-h2)', color: 'var(--c-paper)', marginBottom: '16px' }}>Three friend groups. All different vibes.</div>
+          <div className="font-display font-semibold" style={{ fontSize: 'var(--fs-h2)', color: 'var(--c-ink)', marginBottom: '16px' }}>Three friend groups. All different vibes.</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
             {[
               { text: 'Expats — international chaos crew' },
@@ -129,7 +129,7 @@ export default function Hobbies() {
             ].map(f => (
               <div key={f.text} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <div style={{ width: '6px', height: '6px', background: 'var(--c-gold)', flexShrink: 0 }} />
-                <span style={{ fontSize: 'var(--fs-sm)', color: '#8a8a8a', fontWeight: 300 }}>{f.text}</span>
+                <span style={{ fontSize: 'var(--fs-sm)', color: 'var(--c-muted)', fontWeight: 300 }}>{f.text}</span>
               </div>
             ))}
           </div>
@@ -179,17 +179,17 @@ export default function Hobbies() {
           <div className="label" style={{ marginBottom: '16px' }}>What I'm building toward</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.8fr 1.8fr', gap: '2.5rem', alignItems: 'start' }}>
             <div>
-              <div className="font-display font-semibold" style={{ fontSize: 'var(--fs-h2)', color: 'var(--c-paper)', lineHeight: 1.3, marginBottom: '10px' }}>
+              <div className="font-display font-semibold" style={{ fontSize: 'var(--fs-h2)', color: 'var(--c-ink)', lineHeight: 1.3, marginBottom: '10px' }}>
                 Creator.<br/>Researcher.<br/>Problem finder.
               </div>
-              <div className="font-mono" style={{ fontSize: 'var(--fs-xs)', color: '#7a6040', lineHeight: 1.7, marginTop: '10px' }}>
+              <div className="font-mono" style={{ fontSize: 'var(--fs-xs)', color: 'var(--c-faint)', lineHeight: 1.7, marginTop: '10px' }}>
                 The projects are not just portfolio pieces. They're how I think.
               </div>
             </div>
-            <div style={{ fontSize: 'var(--fs-sm)', color: '#8a8a8a', fontWeight: 300, lineHeight: 1.75 }}>
+            <div style={{ fontSize: 'var(--fs-sm)', color: 'var(--c-muted)', fontWeight: 300, lineHeight: 1.75 }}>
               Most of the work in this portfolio starts with the same observation: one side of a market has sophisticated tools and the other side has a spreadsheet. Zalando has machine learning models for return rate prediction. Their seller partners have a spreadsheet. That asymmetry is what's interesting — not just as a business problem, but as a design problem. Who builds for the other side?
             </div>
-            <div style={{ fontSize: 'var(--fs-sm)', color: '#8a8a8a', fontWeight: 300, lineHeight: 1.75 }}>
+            <div style={{ fontSize: 'var(--fs-sm)', color: 'var(--c-muted)', fontWeight: 300, lineHeight: 1.75 }}>
               Ideation isn't a phase before the real work. It is the real work. Finding the right problem, framing it so a non-technical operator can act on it, understanding what they actually need to see — that's where most of the time goes. The code is just how you ship the answer.
               <div style={{ marginTop: '14px', color: 'var(--c-gold)', fontSize: 'var(--fs-sm)', fontStyle: 'italic' }}>
                 "Why doesn't this exist yet?" is the question driving all of it.

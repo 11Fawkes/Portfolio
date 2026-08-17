@@ -13,18 +13,18 @@
 :root {
   /* ── COLOURS ──────────────────────────────────────────────
      To repaint the whole site: edit only these 10 lines.
-     Current palette: bone + warm dark brown + red accent.
+     Current palette: midnight charcoal + soft white + sage mint accent.
      ──────────────────────────────────────────────────────── */
-  --c-ink:      #f5f0e8;   /* body text, primary headers */
-  --c-ink-2:    #ede8dc;   /* dark section backgrounds   */
-  --c-ink-3:    #d8d0c0;   /* dark card backgrounds      */
-  --c-paper:    #4a72d4;   /* main page background       */
-  --c-paper-2:  #3f64c0;   /* hover background           */
-  --c-paper-3:  #3458b0;   /* borders, dividers          */
-  --c-gold:     #f5f0e8;   /* accent: links, tags, lines */
-  --c-gold-2:   #ffffff;   /* accent hover state         */
-  --c-muted:    #c8d8f8;   /* secondary text             */
-  --c-faint:    #a0b8e8;   /* tertiary text              */
+  --c-ink:      #e8ecf2;   /* body text, primary headers */
+  --c-ink-2:    #161a24;   /* dark section backgrounds   */
+  --c-ink-3:    #1e2230;   /* dark card backgrounds      */
+  --c-paper:    #0c0f18;   /* main page background       */
+  --c-paper-2:  #141824;   /* hover background           */
+  --c-paper-3:  #252a38;   /* borders, dividers          */
+  --c-gold:     #64d8a8;   /* accent: links, tags, lines */
+  --c-gold-2:   #8ae8c4;   /* accent hover state         */
+  --c-muted:    #8892a8;   /* secondary text             */
+  --c-faint:    #5c6478;   /* tertiary text              */
   /* ── FONTS ────────────────────────────────────────────────
      To swap fonts:
      1. Change the family name below
